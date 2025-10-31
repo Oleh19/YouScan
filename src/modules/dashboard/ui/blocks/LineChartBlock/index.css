@@ -1,0 +1,28 @@
+.line-chart-block {
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-lg);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.line-chart-block * {
+  outline: none;
+}
+
+.line-chart-block__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text);
+  line-height: var(--line-height-base);
+  flex-shrink: 0;
+}
+
+.line-chart-block__chart {
+  flex: 1;
+  min-height: 0;
+}
+

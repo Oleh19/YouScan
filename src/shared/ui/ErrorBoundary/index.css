@@ -1,0 +1,25 @@
+.error-boundary {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-danger);
+}
+
+.error-boundary h2 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.error-boundary details {
+  margin-top: var(--spacing-lg);
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error-boundary pre {
+  padding: var(--spacing-md);
+  background-color: var(--color-background-secondary);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}
+

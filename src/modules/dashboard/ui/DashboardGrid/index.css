@@ -1,0 +1,28 @@
+.dashboard-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+
+.grid-cell {
+  aspect-ratio: 1;
+  min-height: var(--cell-min-height);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background-secondary);
+  transition:
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.grid-cell--drop-target {
+  border-color: var(--color-primary);
+  background-color: var(--color-background-drop-target);
+  border-style: dashed;
+}
+
+.grid-cell--drop-invalid {
+  border-color: var(--color-danger);
+  background-color: var(--color-background-drop-invalid);
+  border-style: dashed;
+}
