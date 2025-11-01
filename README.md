@@ -77,6 +77,16 @@ The application will be available at `http://localhost:5173` (port may vary).
 
 ## Design Decisions
 
+### Block Positioning and Removal
+
+When a block is **deleted**, the remaining blocks **do not automatically shift** to fill the empty space. This behavior is **intentional** and follows these design principles:
+
+1. **User Intent Preservation** - Users may have deliberately positioned blocks in specific locations. Automatic repositioning could be unexpected and frustrating
+2. **Predictable Behavior** - Each block maintains its position unless explicitly moved by the user via drag & drop
+3. **Grid Stability** - The grid layout remains stable, preventing layout shifts that could disorient users
+
+If a user wants to reorganize blocks after deletion, they can manually drag blocks to desired positions.
+
 ### Responsive Layout
 
 The application does not provide a responsive layout for mobile devices, in accordance with the requirements in the specification, which state "No need to support responsive layout". The interface is optimized for desktop viewing.
