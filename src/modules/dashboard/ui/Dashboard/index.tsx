@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DashboardGrid } from '../DashboardGrid'
@@ -10,16 +10,13 @@ export const Dashboard = () => {
   const { state, addBlock } = useDashboardContext()
   const [selectedType, setSelectedType] = useState<BlockType>(BLOCK_TYPES_LIST[0].type)
 
-  const handleAddBlock = useCallback(() => {
+  const handleAddBlock = () => {
     addBlock(selectedType)
-  }, [addBlock, selectedType])
+  }
 
-  const handleSelectChange = useCallback(
-    (e: React.ChangeEvent<HTMLSelectElement>) => {
-      setSelectedType(e.target.value as BlockType)
-    },
-    []
-  )
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedType(e.target.value as BlockType)
+  }
 
   const isEmpty = state.blocks.length === 0
 

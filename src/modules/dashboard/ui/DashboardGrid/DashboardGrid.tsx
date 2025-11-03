@@ -12,10 +12,7 @@ interface DashboardGridProps {
 export const DashboardGrid = ({ blocks, gridColumns }: DashboardGridProps) => {
   const rows = useMemo(() => calculateGridRows(blocks), [blocks])
 
-  const gridStyle = useMemo(
-    () => ({ gridTemplateColumns: `repeat(${gridColumns}, 1fr)` }),
-    [gridColumns]
-  )
+  const gridStyle = { gridTemplateColumns: `repeat(${gridColumns}, 1fr)` }
 
   const gridCells = useMemo(
     () =>

@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { useDrag } from 'react-dnd'
 import {
   type BlockId,
@@ -28,13 +28,10 @@ export const DashboardBlock = ({ block, onDelete }: BlockProps) => {
 
   drag(ref)
 
-  const handleDelete = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.stopPropagation()
-      onDelete(block.id)
-    },
-    [block.id, onDelete]
-  )
+  const handleDelete = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation()
+    onDelete(block.id)
+  }
 
   const blockClassName = ['dashboard-block', isDragging && 'dashboard-block--dragging']
     .filter(Boolean)

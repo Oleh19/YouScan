@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react'
+import { useRef } from 'react'
 import { useDrop } from 'react-dnd'
 import { DashboardBlock } from '../../blocks/Block'
 import { useDashboardContext } from '@/modules/dashboard/hooks'
@@ -32,12 +32,9 @@ export const GridCell = ({ row, col, block }: GridCellProps) => {
 
   drop(ref)
 
-  const handleDelete = useCallback(
-    (id: BlockType['id']) => {
-      deleteBlock(id)
-    },
-    [deleteBlock]
-  )
+  const handleDelete = (id: BlockType['id']) => {
+    deleteBlock(id)
+  }
 
   const cellClassName = [
     'grid-cell',
